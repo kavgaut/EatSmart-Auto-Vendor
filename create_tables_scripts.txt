@@ -1,0 +1,116 @@
+create table Item
+(item_code INT,
+item_name varchar2(100) not null,
+item_type varchar2(50) not null,
+calorie_value int,
+ingredient_info varchar2(2000) not null,
+sugar varchar2(6),
+carbohydrate varchar2(6),
+cholesterol varchar2(6),
+total_fat varchar2(6),
+protein varchar2(6),
+gluten_free char(1),
+low_fat char(1),
+low_sugar char(1),
+price FLOAT,
+created_date TIMESTAMP,
+primary key (item_code));
+
+
+
+
+
+create table userrole(
+userId varchar2(5) primary key,
+userPassword varchar2(15) Not null,
+userrole Varchar2(15) not null,
+userName varchar2(15) not null);
+
+
+create table MonitoringStation(
+msID varchar2(10) primary key,
+msLocation varchar2(100),
+msuserId references userrole(userId));
+
+
+create table loguserinfo(
+loggeduserid references userrole(userid),
+logged_in_date TIMESTAMP);
+
+
+
+
+
+create table VMOperator(
+opID varchar2(10) primary key,
+opKey integer not null);
+
+
+
+
+
+create table VM_Item(
+vmID varchar2(10),
+vm_status varchar2(10),
+itemId references item(item_code),
+item_status varchar2(10),
+rackQty integer,
+opID references VMOperator(opID),
+msID references MonitoringStation(msId),
+saleQty integer,
+Revenue float,
+primary key(vmId, itemId));
+
+
+
+
+
+CREATE TABLE CARD(
+CARDID INTEGER PRIMARY KEY,
+BALANCE float not null,
+POINTS INTEGER,
+CardPurchaseDate Timestamp NOT NULL
+);
+
+
+
+
+Create Table CARD_ITEM_HISTORY(
+CARDID INTEGER,
+ITEM_CODE INTEGER,
+ItemPurchaseDate Timestamp NOT NULL,
+FOREIGN KEY(ITEM_CODE) REFERENCES ITEM,
+FOREIGN KEY(CARDID) references CARD);
+
+
+
+
+
+CREATE TABLE CARD_ITEM_FAVORITES(
+CARDID INTEGER,
+ITEM_CODE INTEGER,
+FOREIGN KEY(ITEM_CODE) REFERENCES ITEM,
+FOREIGN KEY(CARDID) references CARD);
+
+
+
+CREATE SEQUENCE card_seq
+START WITH     1000
+INCREMENT BY   1
+NOCACHE
+NOCYCLE;
+
+
+CREATE SEQUENCE item_seq START WITH 108 INCREMENT BY 1 NOCACHE NOCYCLE;
+
+create table coin(
+vmID varchar(10),
+amount float,
+item_purchase_date TIMESTAMP );
+
+create table coin(
+vmID varchar(10),
+amount float,
+item_purchase_date TIMESTAMP);
+
+commit;

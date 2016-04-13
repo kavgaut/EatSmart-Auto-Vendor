@@ -1,0 +1,62 @@
+INSERT INTO Item VALUES(101,'Veg Sandwich','Perishable',195,'Wheat,Sesame,AutolyzedYeast,Veggies','6g','44g','0mg','25g','8g','N','Y','Y',3.0,sysdate);
+
+INSERT INTO Item VALUES(102,'Ham Burger','Perishable',340,'Wheat,Hydrolized proteins,nitrates,ham','8g','55g','2mg','40g','10g','N','n','Y',4.0,sysdate);
+INSERT INTO Item VALUES(103,'Coke','Drinks',240,'CornSyrup,PhosphoricAcid,carbonated water,caramelcolor','65g','65g','0mg','0g','0g','N','N','N',1.50,sysdate);
+
+INSERT INTO Item VALUES(104,'Lays Plain Chips','Packaged',160,'Potatoes,Vegetable oil,Salt','0.7g','15g','0mg','10g','2g','N','N','Y',3.0,sysdate);
+
+INSERT INTO Item VALUES(105,'Kind Energy Bar','Packaged',190,'MixedNuts,CrispRice,Cocoa,ChicoryFibre,NonGMO','12g','21g','0mg','12g','3g','Y','N','N',2.0,sysdate);
+INSERT INTO Item VALUES(106,'Cheetos Crunchy','Packaged',160,'CornMeal,VegetableOil,Whey,salt,cheddarCheese','1g','15g','0mg','10g','2g','N','N','Y',1.50,sysdate);
+INSERT INTO Item VALUES(107,'Diet Pepsi','Drinks',46,'PhosphoricAcid,carbonated water,caramelcolor','9g','11g','0mg','0g','1g','N','Y','Y',1.50,sysdate);
+
+
+
+insert into userrole values('A101','admin101', 'Admin', 'John');
+insert into userrole values('A102', 'admin102', 'Admin', 'Mary');
+
+
+
+
+
+insert into MonitoringStation values('MS1’,’SJS University’,’A101');
+
+insert into MonitoringStation values('MS2’,’SC University’, ’A101’);
+
+
+
+
+
+insert into VMOperator values('OP1',111);
+
+insert into VMOperator values('OP2',222);
+
+
+
+
+
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM1','Active',101,'Active',10,'OP1','MS1');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM1','Active',103,'Active',10,'OP1','MS1');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM1','Active',104,'Active',10,'OP1','MS1');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM2','Active',102,'Active',10,'OP1','MS1');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM2','Active',103,'Active',10,'OP1','MS1');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM2','Active',105,'Active',10,'OP1','MS1');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM3','Active',102,'Active',10,'OP2','MS2');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM3','Active',106,'Active',10,'OP2','MS2');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM3','Active',107,'Active',10,'OP2','MS2');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM4','Active',101,'Active',10,'OP2','MS2');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM4','Active',105,'Active',10,'OP2','MS2');
+
+insert into VM_Item(vmID,vm_status,itemId,item_status,rackQty,opID,msID) values('VM4','Active',107,'Active',10,'OP2','MS2');
+
+

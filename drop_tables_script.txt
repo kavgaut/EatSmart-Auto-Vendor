@@ -1,0 +1,13 @@
+drop table coin;
+drop table VM_Item;
+drop table MonitoringStation;
+drop table loguserinfo;
+drop table VMOperator;
+drop table CARD_ITEM_HISTORY;
+drop table CARD_ITEM_FAVORITES;
+drop table card;
+drop table item;
+drop table userrole;
+drop SEQUENCE card_seq;
+drop SEQUENCE item_seq;
+commit;
